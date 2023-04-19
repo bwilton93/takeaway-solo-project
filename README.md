@@ -13,3 +13,8 @@
 ## Random thoughts
 - Input class?
 - Output class?
+
+# How to run
+- Create the following environment variables on your local machine
+TWILIO_ACCOUNT_SID=[SID TAKEN FROM TWILIO ACCOUNT]
+TWILIO_AUTH_TOKEN=[AUTH TOKEN FROM TWILIO ACCOUNT]
