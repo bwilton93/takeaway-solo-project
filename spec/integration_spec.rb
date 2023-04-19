@@ -55,4 +55,21 @@ RSpec.describe "integration" do
       "Soup - £1"
     ]
   end
+  
+  context "when the user is ready to order" do
+    menu = Menu.new
+    item_1 = MenuItem.new("noodles", 1)
+    item_2 = MenuItem.new("soup", 1)
+    menu.add(item_1)
+    menu.add(item_2)
+    menu.choose_item("noodles")
+    menu.choose_item("soup")
+    describe "#show_receipt" do
+      it "returns a formatted receipt" do
+        expect(menu.show_receipt).to eq [
+          ["Noodles - £1", "Soup - £1"] , 2
+        ]
+      end
+    end
+  end
 end

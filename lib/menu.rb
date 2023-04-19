@@ -24,10 +24,11 @@ class Menu
     return @selected_items.map { |item| item.format }
   end
 
-  def confirm_order
-    show_selected
-    # show the total price
-    # call order text message confirmation
+  def show_receipt
+    receipt = []
+    receipt << show_selected
+    total_price = @selected_items.map { |item| item.price }.inject(:+)
+    receipt << total_price
   end
   
   def show_available
