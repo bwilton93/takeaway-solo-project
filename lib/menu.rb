@@ -15,11 +15,12 @@ class Menu
   end
 
   def choose_item(search_word)
-    return @menu.filter do |item| 
+    @menu.each do |item| 
       if item.name == search_word
-        @selected_items << item
+        return @selected_items << item
       end
     end
+    return "Item not found"
   end
 
   def show_selected
