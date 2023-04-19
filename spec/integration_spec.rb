@@ -12,4 +12,19 @@ RSpec.describe "integration" do
     menu.add(item_2)
     expect(menu.all).to eq [item_1, item_2]
   end
+
+  it "formats an available dish" do
+    menu = Menu.new
+    item_1 = MenuItem.new("noodles", 1)
+    formatter = Formatter.new(item_1)
+    expect(formatter.format).to eq "Noodles - £1"
+  end
+  
+  it "doesn't format a dish that has been made unavailable" do
+    menu = Menu.new
+    item_1 = MenuItem.new("noodles", 1)
+    formatter = Formatter.new(item_1)
+    item_1.toggle_availability
+    expect{ formatter.format }.to raise_error "item not available"
+  end
 end

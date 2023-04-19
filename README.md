@@ -8,3 +8,8 @@
 - The user would like to receive a message when they send an order, telling them when to expect delivery
 
 ![Takeaway solo project design flowchart](https://raw.githubusercontent.com/bwilton93/takeaway-solo-project/main/images/class-system-design.png "Takeaway design flow chart")
+
+
+## Random thoughts
+- Input class?
+- Output class?
