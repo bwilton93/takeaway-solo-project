@@ -20,4 +20,9 @@ class MenuItem
   def toggle_availability
     return @available = !@available
   end
+
+  def format
+    fail "item not available" unless self.available?
+    return "#{self.name.capitalize()} - £#{self.price}"
+  end
 end

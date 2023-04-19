@@ -21,10 +21,12 @@ class Menu
   end
 
   def show_selected
-    return @selected_items
+    return @selected_items.map { |item| item.format }
   end
   
   def show_available
-    return @menu.filter { |item| item.available? }
+    available_items = @menu.filter { |item| item.available? } 
+
+    return available_items.map { |item| item.format }
   end
 end

@@ -28,4 +28,17 @@ RSpec.describe MenuItem do
       expect(menu_item.available?).to eq true
     end
   end
+
+  context "#format" do
+    it "raises error when trying to format an unavailable dish" do
+      menu_item = MenuItem.new("noodles", 1)
+      menu_item.toggle_availability
+      expect{ menu_item.format }.to raise_error "item not available"
+    end
+    
+    it "formats an available dish" do
+      menu_item = MenuItem.new("noodles", 1)
+      expect(menu_item.format).to eq "Noodles - £1"
+    end
+  end
 end
