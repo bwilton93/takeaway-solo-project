@@ -77,7 +77,18 @@ class UserInterface
   end
 
   def submit_order
-    exit
+    order_confirmer = OrderConfirmation.new
+    @io.puts look_at_selection
+    @io.puts "Is this correct?"
+    input = @io.gets.chomp
+    if input == "yes"
+      @io.puts "Please enter your phone number"
+      input = @io.gets.chomp
+      order_confirmer.send_message(input)
+      exit
+    else
+      return
+    end
   end
 
   def border
