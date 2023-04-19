@@ -23,4 +23,8 @@ class Menu
   def show_selected
     return @selected_items
   end
+  
+  def show_available
+    return @menu.filter { |item| item.available? }
+  end
 end

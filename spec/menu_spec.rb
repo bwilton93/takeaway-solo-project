@@ -18,6 +18,17 @@ RSpec.describe Menu do
       expect(menu.all).to eq [item_1, item_2]
     end
   end
+
+  describe "#show_available" do
+    it "shows a list of all available dishes" do
+      menu = Menu.new
+      item_1 = double :item, available?: true
+      item_2 = double :item, available?: false
+      menu.add(item_1)
+      menu.add(item_2)
+      expect(menu.show_available).to eq [item_1]
+    end
+  end
   
   describe "#select_items" do
     it "allows the customer to select a dish" do

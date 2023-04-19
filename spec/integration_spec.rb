@@ -13,6 +13,16 @@ RSpec.describe "integration" do
     expect(menu.all).to eq [item_1, item_2]
   end
 
+  it "shows only available dishes on the menu" do
+    menu = Menu.new
+    item_1 = MenuItem.new("noodles", 1)
+    item_2 = MenuItem.new("soup", 1.5)
+    menu.add(item_1)
+    menu.add(item_2)
+    item_1.toggle_availability
+    expect(menu.show_available).to eq [item_2]
+  end
+
   it "formats an available dish" do
     menu = Menu.new
     item_1 = MenuItem.new("noodles", 1)
