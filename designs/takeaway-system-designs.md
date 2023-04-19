@@ -28,7 +28,7 @@ focus on the details you see as important, not everything. The diagram below
 uses asciiflow.com but you could also use excalidraw.com, draw.io, or miro.com_
 
 ```
-![test](./images/class-system-design.png "test")
+![test](https://raw.githubusercontent.com/bwilton93/takeaway-solo-project/main/images/class-system-design.png "test")
 ```
 
 _Also design the interface of each class in more detail._
