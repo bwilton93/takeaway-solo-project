@@ -1,3 +1,5 @@
+require './menu_item.rb'
+
 class Menu
   def initialize
     @menu = []
