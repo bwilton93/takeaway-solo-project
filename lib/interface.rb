@@ -84,6 +84,7 @@ class UserInterface
     if input == "yes"
       @io.puts "Please enter your phone number"
       input = @io.gets.chomp
+      order_confirmer.time
       order_confirmer.send_message(input)
       exit
     else
